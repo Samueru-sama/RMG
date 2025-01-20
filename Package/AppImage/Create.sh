@@ -25,7 +25,7 @@ if [ ! -f "./lib4bin" ]; then
 	chmod +x ./lib4bin
 fi
 
-xvfb-run -a -- ./lib4bin -p -v -r -s -k -e \
+xvfb-run -a -- ./lib4bin --dst-dir "$bin_dir" -p -v -r -s -k -e \
 	"$bin_dir"/shared/bin/RMG \
 	/usr/lib/x86_64-linux-gnu/libSDL* \
 	/usr/lib/x86_64-linux-gnu/libGL* \
@@ -40,8 +40,7 @@ xvfb-run -a -- ./lib4bin -p -v -r -s -k -e \
 	/usr/lib/x86_64-linux-gnu/qt6/plugins/styles/* \
 	/usr/lib/x86_64-linux-gnu/qt6/plugins/xcbglintegrations/* \
 	/usr/lib/x86_64-linux-gnu/qt6/plugins/tls/* \
-	/usr/lib/x86_64-linux-gnu/qt6/plugins/wayland-*/* \
-	--dst-dir "$bin_dir"
+	/usr/lib/x86_64-linux-gnu/qt6/plugins/wayland-*/*
 
 # Prepare sharun
 "$bin_dir"/sharun -g
