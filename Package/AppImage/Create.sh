@@ -21,7 +21,7 @@ mv "$bin_dir"/usr/share "$bin_dir"/share
 mv "$bin_dir"/usr "$bin_dir"/shared
 
 if [ ! -f "./lib4bin" ]; then
-	curl -L "$LIB4BN" -O ./lib4bin
+	curl -L "$LIB4BN" -o ./lib4bin
 	chmod +x ./lib4bin
 fi
 
@@ -49,7 +49,7 @@ chmod +x "$bin_dir"/AppRun
 
 # make appimage
 if [ ! -f "./appimagetool" ]; then
-	curl -L "$APPIMAGETOOL" -O ./appimagetool
+	curl -L "$APPIMAGETOOL" -o ./appimagetool
 	chmod +x ./appimagetool
 fi
 ./appimagetool --comp zstd \
