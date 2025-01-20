@@ -44,7 +44,7 @@ xvfb-run -a -- ./lib4bin -p -v -r -s -k -e \
 	--dst-dir "$bin_dir"
 
 # Prepare sharun
-"$script_dir"/sharun -g
+"$bin_dir"/sharun -g
 cp -v "$script_dir/AppRun" "$bin_dir"
 chmod +x "$bin_dir"/AppRun
 
