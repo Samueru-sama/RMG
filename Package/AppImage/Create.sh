@@ -40,10 +40,11 @@ xvfb-run -a -- ./lib4bin -p -v -r -s -k -e \
 	/usr/lib/x86_64-linux-gnu/qt6/plugins/styles/* \
 	/usr/lib/x86_64-linux-gnu/qt6/plugins/xcbglintegrations/* \
 	/usr/lib/x86_64-linux-gnu/qt6/plugins/tls/* \
-	/usr/lib/x86_64-linux-gnu/qt6/plugins/wayland-*/*
+	/usr/lib/x86_64-linux-gnu/qt6/plugins/wayland-*/* \
+	--dst-dir "$bin_dir"
 
 # Prepare sharun
-./sharun -g
+"$script_dir"/sharun -g
 cp -v "$script_dir/AppRun" "$bin_dir"
 chmod +x "$bin_dir"/AppRun
 
